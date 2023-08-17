@@ -7,11 +7,13 @@ import {
 import { from, Observable } from 'rxjs';
 import { Injectable, CanActivate } from '@nestjs/common';
 
-import { BaseGuard } from './base.guard';
+import { BaseGuard } from './base.guard.js';
 
 @Injectable()
-export class OAuth2ServerTokenGuard extends BaseGuard
-    implements CanActivate {
+export class OAuth2ServerTokenGuard
+    extends BaseGuard
+    implements CanActivate
+{
     protected action(
         request: OAuth2Request,
         response: OAuth2Response,

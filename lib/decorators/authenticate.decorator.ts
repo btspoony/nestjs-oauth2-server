@@ -5,8 +5,8 @@ import {
 } from '@nestjs/common';
 import { AuthenticateOptions } from 'oauth2-server';
 
-import { OAuth2ServerAuthenticationGuard } from '../guards';
-import { OAUTH2_METHOD_OPTIONS_METADATA } from '../oauth2-server.constants';
+import { OAuth2ServerAuthenticationGuard } from '../guards/index.js';
+import { OAUTH2_METHOD_OPTIONS_METADATA } from '../oauth2-server.constants.js';
 
 export const OAuth2Authenticate = (
     options: AuthenticateOptions = {},

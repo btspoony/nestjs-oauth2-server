@@ -7,8 +7,8 @@ import {
 } from '@nestjs/common';
 import { AuthorizeOptions } from 'oauth2-server';
 
-import { OAuth2ServerTokenGuard } from '../guards';
-import { OAUTH2_METHOD_OPTIONS_METADATA } from '../oauth2-server.constants';
+import { OAuth2ServerTokenGuard } from '../guards/index.js';
+import { OAUTH2_METHOD_OPTIONS_METADATA } from '../oauth2-server.constants.js';
 
 export const OAuth2RenewToken = (
     options?: AuthorizeOptions,

@@ -8,6 +8,7 @@ import {
     Request as OAuth2Request,
     Response as OAuth2Response,
 } from 'oauth2-server';
+import OAuth2Server from 'oauth2-server';
 import {
     Inject,
     Injectable,
@@ -15,14 +16,13 @@ import {
     ExecutionContext,
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import OAuth2Server = require('oauth2-server');
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, mergeMap } from 'rxjs/operators';
 
 import {
     OAUTH2_SERVER,
     OAUTH2_METHOD_OPTIONS_METADATA,
-} from '../oauth2-server.constants';
+} from '../oauth2-server.constants.js';
 
 @Injectable()
 export abstract class BaseGuard {

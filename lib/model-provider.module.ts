@@ -9,12 +9,11 @@ import {
     Module,
     Type,
 } from '@nestjs/common';
-import { InstanceWrapper } from '@nestjs/core/injector/instance-wrapper';
 
 import {
     OAUTH2_SERVER_MODEL,
     OAUTH2_SERVER_MODEL_PROVIDER,
-} from './oauth2-server.constants';
+} from './oauth2-server.constants.js';
 import { mergeMap } from 'rxjs/operators';
 import {
     PasswordModel,
@@ -49,7 +48,7 @@ const NO_MODEL_EXCEPTION = 'OAuth2Model not provided';
                     const service = discoverService
                         .getProviders()
                         .find(
-                            (provider: InstanceWrapper) =>
+                            provider =>
                                 provider.metatype &&
                                 reflector.get(
                                     OAUTH2_SERVER_MODEL,
